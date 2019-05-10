@@ -1,0 +1,130 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Добавление Клиента</ion-title>
+        <ion-buttons end>
+            <button ion-button block type="submit" (click)="onAddButtonClick()"
+                [disabled]="!mainForm.valid">Добавить</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <form (ngSubmit)="onAddButtonClick()" [formGroup]="mainForm">
+        <ion-item>
+            <ion-label color="primary" stacked>Имя</ion-label>
+            <ion-input formControlName="first_name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Фамилия</ion-label>
+            <ion-input formControlName="last_name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Отчество</ion-label>
+            <ion-input formControlName="patronymic"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>E-mail</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Пароль</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Дата рождения</ion-label>
+            <ion-datetime display-format="MM/YYYY" picker-format="MMMM YYYY" formControlName="dob">
+            </ion-datetime>
+        </ion-item>
+        &nbsp;
+
+        <ion-item>
+            <ion-label color="primary" stacked>Серия паспорта</ion-label>
+            <ion-input formControlName="passport_series"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Номер паспорта</ion-label>
+            <ion-input formControlName="passport_number"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Место выдачи</ion-label>
+            <ion-input formControlName="authority"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Дата выдачи</ion-label>
+            <ion-datetime display-format="MM/YYYY" picker-format="MMMM YYYY" formControlName="date_issue">
+            </ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Идентификационный номер</ion-label>
+            <ion-input formControlName="identification_number"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Место рождения</ion-label>
+            <ion-input formControlName="place_birth"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Место прописки</ion-label>
+            <ion-input formControlName="address_current"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Место регистрации</ion-label>
+            <ion-input formControlName="address_registration"></ion-input>
+        </ion-item>
+
+        &nbsp;
+        <ion-item>
+            <ion-label color="primary" stacked>Семейное положение</ion-label>
+            <ion-input formControlName="family_relation"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Городской телефон</ion-label>
+            <ion-input formControlName="phone_first"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Мобильный телефон</ion-label>
+            <ion-input formControlName="phone_second"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Гражданство</ion-label>
+            <ion-input formControlName="citizenship"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Инвалидность</ion-label>
+            <ion-toggle formControlName="disabled"></ion-toggle>
+        </ion-item>
+
+        &nbsp;
+        <ion-item>
+            <ion-label color="primary" stacked>Место работы</ion-label>
+            <ion-input formControlName="job"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Специальность</ion-label>
+            <ion-input formControlName="speciality"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" stacked>Доход</ion-label>
+            <ion-input formControlName="income"></ion-input>
+        </ion-item>
+
+    </form>
+</ion-content>

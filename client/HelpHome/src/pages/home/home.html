@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <div *ngIf="roleAdmin; then adminTitle else clientTitle"></div>
+    <ng-template #adminTitle>
+      <ion-title>Окно Администратора</ion-title>
+    </ng-template>
+    <ng-template #clientTitle>
+      <ion-title>Окно Клиента</ion-title>
+    </ng-template>
+
+    <ion-buttons begin>
+      <div *ngIf="roleAdmin; then adminPanel else clietnPanel"></div>
+      <ng-template #adminPanel>
+        <button ion-button (click)="onNewClietnButtonClick()">Новый Клиент</button>
+      </ng-template>
+      <ng-template #clietnPanel>
+        <button ion-button (click)="onAddCreditButtonClick()">Добавить Кредит</button>
+        <button ion-button (click)="onAddDepositButtonClick()">Добавить Депозит</button>
+      </ng-template>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button (click)="onExitButtonClick()">Выход</button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  &nbsp;
+  <div *ngIf="roleAdmin; then adminList else clientList"></div>
+  <ng-template #adminList>
+    <ion-list>
+      <ion-item *ngFor="let client of clients" (click)="onItemClick(client)">{{client.data.last_name}} {{client.data.first_name}} {{client.data.patronymic}}</ion-item>
+    </ion-list>
+  </ng-template>
+
+  <ng-template #clientList>
+    <div style="display: flex">
+      <div style="flex:1">
+        <ion-item>
+          <ion-label stacked>
+            <h1>Кредиты</h1>
+          </ion-label>
+        </ion-item>
+        &nbsp;
+        <ion-list>
+          <ion-item *ngFor="let credit of userCredits" (click)="onCreditItemClick(credit)"> {{credit.description}} </ion-item>
+        </ion-list>
+      </div>
+      <div style="flex:1">
+        <ion-item>
+          <ion-label stacked>
+            <h1>Депозиты</h1>
+          </ion-label>
+        </ion-item>
+        &nbsp;
+        <ion-list>
+          <ion-item *ngFor="let deposit of userDeposits" (click)="onDepositItemClick(deposit)"> {{deposit.description}} </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </ng-template>
+
+</ion-content>

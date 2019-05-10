@@ -1,0 +1,72 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Создание Депозита</ion-title>
+    <ion-buttons end>
+      <button ion-button block type="submit" (click)="onAddButtonClick()">Добавить</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label>Депозит</ion-label>
+    <ion-select [(ngModel)]="deposit" interface="action-sheet" (ionChange)="onDepositTypeChange()">
+      <ion-option *ngFor="let item of deposits">{{item.description}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Срок(месяцев)</ion-label>
+    <ion-select interface="action-sheet" #term (ionChange)="onTermChange(term)">
+      <ion-option>1</ion-option>
+      <ion-option>2</ion-option>
+      <ion-option>3</ion-option>
+      <ion-option>4</ion-option>
+      <ion-option>5</ion-option>
+      <ion-option>6</ion-option>
+      <ion-option>7</ion-option>
+      <ion-option>8</ion-option>
+      <ion-option>9</ion-option>
+      <ion-option>10</ion-option>
+      <ion-option>11</ion-option>
+      <ion-option>12</ion-option>
+      <ion-option>13</ion-option>
+      <ion-option>14</ion-option>
+      <ion-option>15</ion-option>
+      <ion-option>16</ion-option>
+      <ion-option>17</ion-option>
+      <ion-option>18</ion-option>
+      <ion-option>19</ion-option>
+      <ion-option>20</ion-option>
+      <ion-option>21</ion-option>
+      <ion-option>22</ion-option>
+      <ion-option>23</ion-option>
+      <ion-option>24</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Сумма</ion-label>
+    <ion-input [(ngModel)]="amount" (ionChange)="onAmountChange()"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Процентная ставка</ion-label>
+    <ion-label>{{rate}}%</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Минимальная сумма</ion-label>
+    <ion-label>{{min}}</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Доход</ion-label>
+    <ion-label>{{income}}</ion-label>
+  </ion-item>
+
+</ion-content>
